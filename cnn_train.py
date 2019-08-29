@@ -20,7 +20,7 @@ import argparse
 
 parser = argparse.ArgumentParser(description='CNNの学習を行うプログラム')
 parser.add_argument('--aug', '-a', required=True,choices=['yes', 'no'], help='Augmentationありのデータを使うか否か')
-parser.add_argument('--type', '-t', required=True,choices=['kutusita_npz_data/', 'slip_npz_data/'], help='靴下とスリッパどっちを使っているか')
+parser.add_argument('--type', '-t', required=True,choices=['kutusita_npzdata/', 'slip_npzdata/'], help='靴下とスリッパどっちを使っているか')
 args = parser.parse_args()
 augkey = args.aug
 
