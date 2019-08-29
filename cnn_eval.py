@@ -131,7 +131,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='CNNで学習済みのモデルを使って評価を行うプログラム')
     parser.add_argument('--wavdir', '-w', default='./data', help='音が保存されているディレクトリ')
     parser.add_argument('--testdir', '-t', default='./testdata', help='テストに使いたい音が保存されているディレクトリ')
-    parser.add_argument('--type', required=True, choices=["kutusita","slip"] help='靴下かスリッパかの違い')
+    parser.add_argument('--type', required=True, choices=["kutusita","slip"], help='靴下かスリッパかの違い')
     parser.add_argument('--aug', '-a', required=True, choices=["yes","no"], help='augmentationありかなしか')
     args = parser.parse_args()
 

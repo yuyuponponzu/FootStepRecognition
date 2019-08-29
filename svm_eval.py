@@ -147,9 +147,9 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='音を認識するモデルの学習')
     parser.add_argument('--wavdir', '-w', default='./data', help='音が保存されているディレクトリ')
     parser.add_argument('--testdir', '-t', default='./testdata', help='音が保存されているディレクトリ')
-    parser.add_argument('--type', required=True, choices=["kutusita","slip"] help='靴下かスリッパかの違い')
-    parser.add_argument('--aug', required=True, choices=["yes","no"] help='augmentationありか否か')
-    parser.add_argument('--nmf', required=True, choices=["yes","no"] help='NMFありか否か')
+    parser.add_argument('--type', required=True, choices=["kutusita","slip"], help='靴下かスリッパかの違い')
+    parser.add_argument('--aug', required=True, choices=["yes","no"], help='augmentationありか否か')
+    parser.add_argument('--nmf', required=True, choices=["yes","no"], help='NMFありか否か')
     parser.add_argument('--out', '-o', default='result', help='ログ，モデルの出力先')
     args = parser.parse_args()
 
