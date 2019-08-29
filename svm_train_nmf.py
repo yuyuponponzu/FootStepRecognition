@@ -17,6 +17,7 @@ from sklearn.svm import SVC
 from sklearn.svm import SVR
 from sklearn import model_selection
 from sklearn.model_selection import GridSearchCV
+import argparse
 
 parser = argparse.ArgumentParser(description='CNNの学習を行うプログラム')
 parser.add_argument('--aug', '-a', required=True,choices=['yes', 'no'], help='Augmentationありのデータを使うか否か')
