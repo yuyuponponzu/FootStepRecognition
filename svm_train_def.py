@@ -80,28 +80,30 @@ search_params = [
         "random_state"    : [2525],
     }
 ]
-#gs = GridSearchCV(SVC(), 
-#              search_params,
-#              verbose=True, 
-#              n_jobs=4)
-#gs.fit(traindata, trainlabels)
-#print(gs.best_estimator_)
-#print(gs.best_estimator_.score(testdata,testlabels))
+gs = GridSearchCV(SVC(), 
+              search_params,
+              verbose=True, 
+              n_jobs=4)
+gs.fit(traindata, trainlabels)
+print(gs.best_estimator_)
+print(gs.best_estimator_.score(testdata,testlabels))
 #predicted_label = gs.best_estimator_.predict(testdata)
 
 #for params, mean_score, all_scores in gs.grid_scores_:
 #    print "{:.3f} (+/- {:.3f}) for {}".format(mean_score, all_scores.std() / 2, params)
-
+"""
 model = SVC(C=0.001, cache_size=200, class_weight=None, coef0=0.0,
           decision_function_shape='ovr', degree=3, gamma=1e-20, kernel='linear',
             max_iter=-1, probability=False, random_state=2525, shrinking=True,
               tol=0.001, verbose=False)
-
-model.fit(traindata,trainlabels)
+"""
+#model.fit(traindata,trainlabels)
 
 if augkey == "yes" :
     filename = './svm_model_default/finalized_model_aug.sav'
 else :
     filename = './svm_model_default/finalized_model.sav'
 
-pickle.dump(model, open(filename, 'wb'))
+
+pickle.dump(gs, open(filename, 'wb'))
+#pickle.dump(model, open(filename, 'wb'))
