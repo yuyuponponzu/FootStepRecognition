@@ -99,7 +99,7 @@ model = SVC(C=0.001, cache_size=200, class_weight=None, coef0=0.0,
 
 model.fit(traindata,trainlabels)
 
-if key == "yes" :
+if augkey == "yes" :
     filename = './svm_model_default/finalized_model_aug.sav'
 else :
     filename = './svm_model_default/finalized_model.sav'
