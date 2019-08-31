@@ -148,5 +148,5 @@ if __name__ == "__main__":
     parser.add_argument('--model', '-m', required=True, help='modelの場所')
     args = parser.parse_args()
 
-    a=main(args.aug, "", args.wavdir, args.testdir, args.type)
+    a=main(args.aug, "", args.wavdir, args.testdir, args.type, args.model)
 

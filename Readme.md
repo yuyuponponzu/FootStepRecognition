@@ -85,7 +85,7 @@ python cnn_train.py --aug yes --type kutusita_npz_data/
 ### - 各モデルでの評価
 それぞれのモデルを個別に評価するときは以下を実行
 ```Terminal:Terminal
-python cnn_eval.py --wavdir ./data --testdir ./testdata --aug yes --type kutusita
+python cnn_eval.py --wavdir ./data --testdir ./testdata --aug yes --type kutusita -m ./esc
 ```
 ```Terminal:Terminal
 python svm_eval.py --wavdir ./data --testdir ./testdata --aug yes --type kutusita --nmf yes
@@ -96,6 +96,5 @@ python eval_allmodels.py --wavdir ./data --testdir ./testdata --type kutusita
 ```
 
 ### - 各モデルのデータについて
-
-[一応ここにも置いてあります](https://drive.google.com/drive/u/1/folders/1jFc9k5Jfd7vSwG2d6iXW9vnjmMzTCdf_)
+各種モデルについては[ここ](https://drive.google.com/drive/u/1/folders/1jFc9k5Jfd7vSwG2d6iXW9vnjmMzTCdf_)を参照のこと
 
