@@ -84,7 +84,7 @@ def calculate_melsp(x, n_fft=1024, hop_length=128):
     return melsp
 
 
-def main(augkey, _, wavdir, testdir, type_):
+def main(augkey, _, wavdir, testdir, type_, model_):
     #labelname = {"0":"andosan","1":"akagawakun","2":"hori","3":"huziisan"}
     wavdir = os.path.join(wavdir, type_)
     testdir = os.path.join(testdir, type_)
@@ -125,11 +125,11 @@ def main(augkey, _, wavdir, testdir, type_):
     print("適切かどうか未確認",x_test.shape)
     if augkey == "yes":
         model_dir = "./cnn_models_aug"
-        model_f = os.path.join(model_dir, args.model)
+        model_f = os.path.join(model_dir, model_)
         model = load_model(model_f)
     else :
         model_dir = "./cnn_models"
-        model_f = os.path.join(model_dir, args.model)
+        model_f = os.path.join(model_dir, model_)
         model = load_model(model_f)
     model.summary()
     evaluation = model.evaluate(x_test, y_test)
@@ -145,6 +145,7 @@ if __name__ == "__main__":
     parser.add_argument('--testdir', '-t', default='./testdata', help='テストに使いたい音が保存されているディレクトリ')
     parser.add_argument('--type', required=True, choices=["kutusita","slip"], help='靴下かスリッパかの違い')
     parser.add_argument('--aug', '-a', required=True, choices=["yes","no"], help='augmentationありかなしか')
+    parser.add_argument('--model', '-m', required=True, help='modelの場所')
     args = parser.parse_args()
 
     a=main(args.aug, "", args.wavdir, args.testdir, args.type)
