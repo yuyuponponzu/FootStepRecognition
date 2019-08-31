@@ -30,6 +30,7 @@ def plot_wavdir(dirname):
         while True:
             for i in [f for f in wavs if ('wav' in f)]:
                 k = os.path.join(dirname, i)
+                print(k)
                 fs, x = read(k)
                 plt.figure()
                 plt.plot(x)
@@ -124,8 +125,17 @@ def cut_length(dir):
                 for i, chunk in enumerate(chunks):
                     chunk.export(g+"00"+str(i)+".wav", format="wav")
 
-# mono音源に変換
-def convert_mono(dir):
+def to_mono(wavname, write_fname):
+    x, fs = librosa.load(wavname) 
+    print(x.shape)
+    wav_l = x[:, 0]
+    wav_r = x[:, 1]
+    xs = (0.5 * wav_l) + (0.5 * wav_r)
+    #return xs
+    sf.write(write_fname, xs, samplerate=fs)
+
+# mono音源に変換(リスト版)
+def convert_mono_list(dir):
     for c in os.listdir(dir):
         print("Convert to Mono now!")    
         print('class: {}'.format(c))

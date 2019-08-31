@@ -135,5 +135,5 @@ if __name__ == "__main__":
     parser.add_argument('--aug', '-a', required=True, choices=["yes","no"], help='augmentationありかなしか')
     args = parser.parse_args()
 
-    a=main(args.aug, args.wavdir, args.testdir)
+    a=main(args.aug, "", args.wavdir, args.testdir, args.type)
 
