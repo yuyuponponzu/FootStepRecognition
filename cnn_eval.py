@@ -67,6 +67,12 @@ def lengthcheck(wavdir):
     return length
 """
 
+def to_mono(x):
+    wav_l = x[:, 0]
+    wav_r = x[:, 1]
+    xs = (0.5 * wav_l) + (0.5 * wav_r)
+    return xs
+
 def alignx(x, length):
     x = np.pad(x,(0,length-len(x)),"constant")
     return x
@@ -97,6 +103,11 @@ def main(augkey, _, wavdir, testdir, type_):
         wavs = os.listdir(d)
         for i in [f for f in wavs if ('wav' in f)]:
             fs, x = read(os.path.join(d, i)) # wavファイルの読み込み
+            if len(x[1]) != 1:
+                x = to_mono(x) #ステレオからモノラルへ
+            if length < len(x): 
+                print("This is outlier. Excluding...")
+                continue #外れ値を算出（大抵は１歩以上の足音が入ってる）
             x = np.asarray(alignx(x,length)).astype(np.float32)
             _x = calculate_melsp(x)
             freq, time = _x.shape
