@@ -85,12 +85,13 @@ python cnn_train.py --aug yes --type kutusita_npz_data/
 ### - 各モデルでの評価
 それぞれのモデルを個別に評価するときは以下を実行
 ```Terminal:Terminal
-python cnn_eval.py --wavdir ./data --testdir ./testdata --aug yes --type kutusita -m ./esc
+python cnn_eval.py --wavdir ./data --testdir ./testdata --aug yes --type kutusita -m ./hogehoge.hdf5
 ```
 ```Terminal:Terminal
-python svm_eval.py --wavdir ./data --testdir ./testdata --aug yes --type kutusita --nmf yes
+python svm_eval.py --wavdir ./data --testdir ./testdata --aug yes --type kutusita --nmf yes -m ./hogehoge.sav
 ```
 また，一気に評価をしてその結果を表形式で書き出したいときは以下を実行
+(プログラム内に読み出すモデルの場所を設定しなければならない)
 ```Terminal:Terminal
 python eval_allmodels.py --wavdir ./data --testdir ./testdata --type kutusita
 ```
