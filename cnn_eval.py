@@ -118,7 +118,7 @@ def main(augkey, _, wavdir, testdir, type_):
     labelarr = labelarr.flatten()
     print(labelarr)
 
-    classes = len(labelname.item())
+    classes = len(labelname.items())
     y_test = keras.utils.to_categorical(labelarr, classes)
     print("vstackのところ未確認，train.shape",train.shape)
     x_test = train.reshape(len(train), freq, time, 1)
