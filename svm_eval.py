@@ -85,7 +85,7 @@ def calculate_melsp(x, n_fft=1024, hop_length=128):
     return melsp
 
 
-def main(augkey, nmfkey, wavdir, testdir, type_):
+def main(augkey, nmfkey, wavdir, testdir, type_, _):
     wavdir = os.path.join(wavdir, type_)
     testdir = os.path.join(testdir, type_)
     K = 25
