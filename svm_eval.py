@@ -92,6 +92,7 @@ def main(augkey, nmfkey, wavdir, testdir, type_, _):
     model = NMF(n_components=K, init='random', random_state=0)
     f = open('./class.json', 'r')
     labelname = json.load(f)
+    labelname = {"0":"huziisan","1":"akagawakun","2":"hori","3":"andosan"}
     print('Loading dataset ...')
     train = []
     train2 = []
