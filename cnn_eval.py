@@ -135,8 +135,8 @@ def main(augkey, _, wavdir, testdir, type_, model_):
     evaluation = model.evaluate(x_test, y_test)
     print(evaluation)
     pred = model.predict(x_test)
-    #report = classification_report(labelarr, np.argmax(pred, axis=1), output_dict=True)
-    report = accuracy_score(labelarr,np.argmax(pred, axis=1))
+    report = classification_report(labelarr, np.argmax(pred, axis=1), output_dict=True)
+    #report = accuracy_score(labelarr,np.argmax(pred, axis=1))
     return report
 
 if __name__ == "__main__":
