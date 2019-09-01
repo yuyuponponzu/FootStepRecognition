@@ -27,7 +27,7 @@ for i, de in enumerate(def_):
     print(df)
     df_aug[i] = df.drop('support',axis=1)
 
-log_fname = "log_{}.txt".format{args.type}
+log_fname = "log_{}.txt".format(args.type)
 log = open(log_fname,'w')
 dff = pd.concat([df_aug[0], df_aug[1], df_aug[2]], axis=1)
 log.write(dff.to_latex())
@@ -49,7 +49,7 @@ for i, de in enumerate(def_):
     df = df.rename(index={'0':'A','1':'B','2':'C','3':'D'})
     df_aug[i] = df.drop('support',axis=1)
 
-log_fname = "log_{}_aug.txt".format{args.type}
+log_fname = "log_{}_aug.txt".format(args.type)
 log = open(log_fname,'w')
 dff = pd.concat([df_aug[0], df_aug[1]], axis=1)
 log.write(dff.to_latex())
