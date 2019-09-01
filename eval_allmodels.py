@@ -17,7 +17,10 @@ df_ = [] * 3
 #Augmentationなし，key_2はnmfあり，nmfなし，CNNの順番で読み取る
 key_1 = ["no", "no", "no"]
 key_2 = ["yes", "no", ""]
-model_ = ["","","esc50_.49_0.0762_1.0000.hdf5"]
+if args.type == "kutusita":
+    model_ = ["","","esc50_.49_0.0762_1.0000.hdf5"]
+else:
+    model_ =["","","esc50_.48_0.1426_0.9667.hdf5"]
 
 for i, de in enumerate(def_):
     x = de(key_1[i], key_2[i], args.wavdir, args.testdir, args.type, model_[i])
@@ -40,7 +43,10 @@ df_aug = [''] * 2
 df_ = [] * 2
 key_1 = ["yes", "yes"] #aug 
 key_2 = ["yes", ""] #nmf
-model_ = ["","esc50_.15_0.0205_1.0000.hdf5"]
+if args.type == "kutusita":
+    model_ = ["","esc50_.15_0.0205_1.0000.hdf5"]
+else:
+    model_ = ["","esc50_.41_0.0118_1.0000.hdf5"]
 
 for i, de in enumerate(def_):
     x = de(key_1[i], key_2[i], args.wavdir, args.testdir, args.type, model_[i])
