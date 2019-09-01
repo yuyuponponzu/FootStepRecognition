@@ -6,7 +6,7 @@ import numpy as np
 parser = argparse.ArgumentParser(description='音を認識するモデルの学習')
 parser.add_argument('--wavdir', '-w', default='./data', help='音が保存されているディレクトリ')
 parser.add_argument('--testdir', '-t', default='./testdata', help='音が保存されているディレクトリ')
-parser.add_argument('--type', required=True, choices=["kutusita","slip"] help='靴下かスリッパかの違い')
+parser.add_argument('--type', required=True, choices=["kutusita","slip"], help='靴下かスリッパかの違い')
 args = parser.parse_args()
 
 def_ = [sv.main, sv.main, cn.main]
