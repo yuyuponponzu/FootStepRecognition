@@ -2,6 +2,7 @@ import svm_eval as sv
 import cnn_eval as cn
 import pandas as pd
 import numpy as np
+import argparse
 
 parser = argparse.ArgumentParser(description='音を認識するモデルの学習')
 parser.add_argument('--wavdir', '-w', default='./data', help='音が保存されているディレクトリ')
