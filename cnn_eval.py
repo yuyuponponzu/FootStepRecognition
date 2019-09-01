@@ -90,6 +90,7 @@ def main(augkey, _, wavdir, testdir, type_, model_):
     testdir = os.path.join(testdir, type_)
     f = open('./class.json', 'r')
     labelname = json.load(f)
+    labelname = {"0":"huziisan","1":"akagawakun","2":"hori","3":"andosan"}
     print('Loading dataset ...')
     train = []
     train2 = []
