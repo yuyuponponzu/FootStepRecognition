@@ -65,7 +65,7 @@ x_test = test_data["x"]
 y_test = test_data["y"]
 test_num = len(y_test)
 
-K = 19 #基底数を指定
+K = 25 #基底数を指定
 
 x_nmf_train = np.zeros(freq*K*train_num).reshape(train_num, freq, K)
 x_nmf_test = np.zeros(freq*K*test_num).reshape(test_num, freq, K)
